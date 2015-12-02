@@ -67,10 +67,7 @@ $(document).on 'ready', ->
         return
 
     viewTodo = (e) ->
-        element_id = $(e.target).attr 'id'
-        alert element_id
-        todo_id = element_id.replace /todo_/, ''
-        element = null
+        todo_id = $(e.target).attr('id').replace(/todo_/, '')
         $.ajax
             method: "GET"
             url: "todos/#{todo_id}/edit"
@@ -110,7 +107,6 @@ $(document).on 'ready', ->
                 $('#formarea').html ''
                 $('.field').val 'New'
                 $('#formarea').hide()
-                $('ul#todos li').on 'click', viewTodo
                 todo_id = null
                 $('ul#todos li:last').on 'click', (e) ->
                     if pressed

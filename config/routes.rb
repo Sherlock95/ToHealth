@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     get 'todos' => 'todos#show'
     get 'todos/new' => 'todos#new'
     post 'todos/create' => 'todos#create'
-#    get 'todo/index' => 'todo#index' # Admin Only
+#    get 'todos/index' => 'todos#index' # Admin Only
     
     get 'health' => 'health#index'
 
@@ -19,5 +19,5 @@ Rails.application.routes.draw do
 
     delete 'logout' => 'sessions#destroy'
  
-    resources :todo, :health, :login, :users, :todos
+    resources :health, :login, :users, :todos
 end

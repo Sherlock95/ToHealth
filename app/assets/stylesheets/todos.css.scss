@@ -40,7 +40,7 @@ div#menu .field:hover {
 div#formarea {
     position: absolute;
     width: 350px;
-    height: 550px;
+    height: 597px;
     top: 50%;
     left: 50%;
     margin-top: -325px;
@@ -78,14 +78,25 @@ div#exitNew input[name=canceler] {
 }
 
 ul#newForm li {
-    margin: 5px 0 5px 0;
+    margin: 15px 0 15px 0;
 }
 
-div#numfld { 
+ul#editform li {
+    margin: 15px 0 15px 0;
+}
+
+div.numfld { 
     margin: 10px 0 0 0;
+    display: inline-block;
 }
 
-div#txtfld {
+div.numfldval {
+    margin: 10px 0 0 0;
+    display: inline-block;
+    width: 15px;
+}
+
+div.txtfld {
     margin: 10px 0 0 0;
 }
 
@@ -94,12 +105,12 @@ ul#todos {
     padding: 2px 4px;
 }
 
-li.todo {
+ul#todos li {
     border: 2px solid black;
     width: 300px;
     min-width: 300px;
     background: #fff;
-    margin: 5px 0 5px 0;
+    margin: 10px 0 10px 0;
 }
 
 div[class^=todo] {

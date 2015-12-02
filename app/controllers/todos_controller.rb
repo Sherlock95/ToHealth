@@ -33,6 +33,40 @@ class TodosController < ApplicationController
         end
     end
 
+    def edit
+        @todo = Todo.find( params[:id] )
+
+        respond_to do |format|
+            format.html {
+                render :partial => "todos/edit", :locals => { :todo => @todo }, :layout => false
+            }
+            format.js {
+                render :partial => "todos/edit", :locals => { :todo => @todo }, :layout => false
+            }
+        end
+    end
+
+    def update
+        @todo = Todo.find( params[:id] )
+
+        date = nil
+        if params[ :dueDate ] != "" || params[ :dueDate ] != nil
+            date = Date.strptime( params[ :dueDate ], "%Y-%m-%d" )
+        else
+            date = nil
+        end
+
+        @todo.update_attributes( {
+            name: params[ :name ],
+            course: params[ :course ],
+            dueDate: date,
+            estTime: params[ :estTime ],
+            description: params[ :description ],
+            priority: params[ :priority ],
+            user_id_id: session[ :user_id_id ]
+        })
+    end
+
     def new
         @todo = Todo.new
 

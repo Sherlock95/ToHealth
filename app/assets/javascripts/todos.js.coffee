@@ -53,12 +53,12 @@ $(document).on 'ready', ->
                 $('ul#todos li:last').on 'click', (e) ->
                     if pressed
                         $('#formarea').html ''
-                        viewTodo $(this)
+                        viewTodo e
                         return
                     else
                         pressed = true
                         $('#formarea').html ''
-                        viewTodo $(this)
+                        viewTodo e
                         return
                 return
             error: (xhr, status, error) ->
@@ -66,13 +66,11 @@ $(document).on 'ready', ->
                 return
         return
 
-    viewTodo = (element) ->
-        if element
-            element_id = element.attr 'id'
-        else
-            element_id = $(this).attr 'id'
-
+    viewTodo = (e) ->
+        element_id = $(e.target).attr 'id'
+        alert element_id
         todo_id = element_id.replace /todo_/, ''
+        element = null
         $.ajax
             method: "GET"
             url: "todos/#{todo_id}/edit"
@@ -80,7 +78,7 @@ $(document).on 'ready', ->
             success: (data, status, xhr) ->
                 $('#formarea').append data.trim()
                 $('#formarea').show()
-                $('#edit_todo').on 'submit', formUpdate
+                $('form.edit_todo').on 'submit', formUpdate
                 $('.field').val 'Exit'
                 $('#todo_priority').on 'change', showRangeVal
                 showRangeVal
@@ -106,12 +104,24 @@ $(document).on 'ready', ->
             data: data
             accepts: html: 'text/html'
             success: (data, status, xhr) ->
+                new_html = $('#todos').html().replace data.trim(), ''
+                $('#todos').html new_html
                 $('#todos').append data.trim()
                 $('#formarea').html ''
                 $('.field').val 'New'
                 $('#formarea').hide()
                 $('ul#todos li').on 'click', viewTodo
                 todo_id = null
+                $('ul#todos li:last').on 'click', (e) ->
+                    if pressed
+                        $('#formarea').html ''
+                        viewTodo e
+                        return
+                    else
+                        pressed = true
+                        $('#formarea').html ''
+                        viewTodo e
+                        return
                 return
             error: (xhr, status, error) ->
                 alert "AJAX Error: #{status} ; #{error}"
@@ -125,12 +135,12 @@ $(document).on 'ready', ->
     $('ul#todos li').on 'click', (e) ->
         if pressed
             $('#formarea').html ''
-            viewTodo $(this)
+            viewTodo e
             return
         else
             pressed = true
             $('#formarea').html ''
-            viewTodo $(this)
+            viewTodo e
             return
 
     $('.field').on 'click', (e) ->

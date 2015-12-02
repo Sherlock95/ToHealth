@@ -56,7 +56,7 @@ class TodosController < ApplicationController
             date = nil
         end
 
-        @todo.update_attributes( {
+        if @todo.update_attributes( {
             name: params[ :name ],
             course: params[ :course ],
             dueDate: date,
@@ -65,6 +65,17 @@ class TodosController < ApplicationController
             priority: params[ :priority ],
             user_id_id: session[ :user_id_id ]
         })
+            respond_to do |format|
+                format.html {
+                    render :partial => "todos/create", :locals => { :todo => @todo }, :layout => false
+                }
+                format.js {
+                    render :partial => "todos/create", :locals => { :todo => @todo }, :layout => false
+                }
+            end
+        else
+            render :layout => false
+        end
     end
 
     def new

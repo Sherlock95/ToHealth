@@ -89,6 +89,11 @@ div#txtfld {
     margin: 10px 0 0 0;
 }
 
+ul#todos {
+    list-style-type: none;
+    padding: 2px 4px;
+}
+
 li.todo {
     border: 2px solid black;
     width: 300px;

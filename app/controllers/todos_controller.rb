@@ -1,24 +1,23 @@
 class TodosController < ApplicationController
     before_action :require_user, only: [:show]
     before_action :require_admin, only: [:show_all]
-    respond_to :html, :js
 
     def create
         date = nil
-        if params[ :todo ][ :dueDate ] != ""
-            date = Date.strptime( params[ :todo ][ :dueDate ], "%m/%d/%Y" )
+        if params[ :dueDate ] != ""
+            date = Date.strptime( params[ :dueDate ], "%m/%d/%Y" )
         else
             date = nil
         end
             
 
         @todo = Todo.new( {
-            name: params[ :todo ][ :name ],
-            course: params[ :todo ][ :course ],
+            name: params[ :name ],
+            course: params[ :course ],
             dueDate: date,
-            estTime: params[ :todo ][ :estTime ],
-            description: params[ :todo ][ :description ],
-            priority: params[ :todo ][ :priority ],
+            estTime: params[ :estTime ],
+            description: params[ :description ],
+            priority: params[ :priority ],
             user_id_id: session[ :user_id_id ]
         })
 
@@ -37,7 +36,7 @@ class TodosController < ApplicationController
     def new
         @todo = Todo.new
 
-        respond_with do |format|
+        respond_to do |format|
             format.html { 
                 render :partial => "todos/new", :locals => { :todo => @todo }, :layout => false 
             }

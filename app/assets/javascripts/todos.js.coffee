@@ -67,7 +67,8 @@ $(document).on 'ready', ->
         return
 
     viewTodo = (e) ->
-        todo_id = $(e.target).attr('id').replace(/todo_/, '')
+        element = if event.target.tagName == 'li' then event.target else $(event.target).closest('li')
+        todo_id = element.attr( 'id' ).replace /todo_/, ''
         $.ajax
             method: "GET"
             url: "todos/#{todo_id}/edit"
@@ -78,7 +79,7 @@ $(document).on 'ready', ->
                 $('form.edit_todo').on 'submit', formUpdate
                 $('.field').val 'Exit'
                 $('#todo_priority').on 'change', showRangeVal
-                showRangeVal
+                showRangeVal()
                 return
             error: (xhr, status, error) ->
                 alert "AJAX Error: #{status} ; #{error}"
@@ -101,8 +102,7 @@ $(document).on 'ready', ->
             data: data
             accepts: html: 'text/html'
             success: (data, status, xhr) ->
-                new_html = $('#todos').html().replace data.trim(), ''
-                $('#todos').html new_html
+                $("#todo_#{todo_id}").remove()
                 $('#todos').append data.trim()
                 $('#formarea').html ''
                 $('.field').val 'New'

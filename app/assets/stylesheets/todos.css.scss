@@ -8,20 +8,20 @@ div#todoarea {
 
 div#menu { 
     position: fixed; 
-    bottom: 30px;
-    right: 30px;
+    bottom: 20px;
+    right: 20px;
 }
 
 div#menu .field {
-	width: 90px; 
-    height: 90px;
+	width: 70px; 
+    height: 70px;
     background: #EC6603; 
     color: #000; 
     cursor: pointer;
 	font-family: 'lucida sans unicode',sans-serif; 
     font-size: 18pt;
 	border: solid 1px #000000;
-    border-radius: 90px;
+    border-radius: 70px;
 	-webkit-transition: all .4s ease-in-out;
 	transition: all .3s ease-in-out;
     text-align: center;
@@ -40,7 +40,7 @@ div#menu .field:hover {
 div#formarea {
     position: absolute;
     width: 350px;
-    height: 597px;
+    height: 537px;
     top: 50%;
     left: 50%;
     margin-top: -325px;
@@ -78,11 +78,11 @@ div#exitNew input[name=canceler] {
 }
 
 ul#newForm li {
-    margin: 15px 0 15px 0;
+    margin: 0 0 6px 0;
 }
 
 ul#editform li {
-    margin: 15px 0 15px 0;
+    margin: 0 0 6px 0;
 }
 
 div.numfld { 
@@ -140,4 +140,14 @@ div.tododue {
 div.todoseperator {
     width: 7px;
     font-weight: bold;
+}
+
+div.subbtn {
+    float: left;
+    display: inline-block;
+}
+
+div.delbtn {
+    float: right;
+    display: inline-block;
 }

@@ -80,6 +80,7 @@ $(document).on 'ready', ->
                 $('.field').val 'Exit'
                 $('#todo_priority').on 'change', showRangeVal
                 showRangeVal()
+                $('input#delbtn').on 'click', deleteTodo
                 return
             error: (xhr, status, error) ->
                 alert "AJAX Error: #{status} ; #{error}"
@@ -118,6 +119,22 @@ $(document).on 'ready', ->
                         $('#formarea').html ''
                         viewTodo e
                         return
+                return
+            error: (xhr, status, error) ->
+                alert "AJAX Error: #{status} ; #{error}"
+                return
+        return false
+
+    deleteTodo = (e) ->
+        $.ajax
+            method: "DELETE"
+            url: "/todos/#{todo_id}"
+            accepts: html: "text/html"
+            success: (data, status, xhr) ->
+                $("#todo_#{todo_id}").remove()
+                todo_id = null
+                hideForm()
+                pressed = false
                 return
             error: (xhr, status, error) ->
                 alert "AJAX Error: #{status} ; #{error}"

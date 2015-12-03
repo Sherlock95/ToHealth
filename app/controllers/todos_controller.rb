@@ -78,6 +78,22 @@ class TodosController < ApplicationController
         end
     end
 
+    def destroy
+        @todo = Todo.find( params[:id] )
+        if @todo
+            @todo.destroy!
+        end
+
+        respond_to do |format|
+            format.html {
+                render :nothing => true
+            }
+            format.js {
+                render :nothing => true
+            }
+        end
+    end
+
     def new
         @todo = Todo.new
 

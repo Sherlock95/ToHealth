@@ -62,8 +62,7 @@ class TodosController < ApplicationController
             dueDate: date,
             estTime: params[ :estTime ],
             description: params[ :description ],
-            priority: params[ :priority ],
-            user_id_id: session[ :user_id_id ]
+            priority: params[ :priority ]
         })
             respond_to do |format|
                 format.html {
@@ -79,19 +78,9 @@ class TodosController < ApplicationController
     end
 
     def destroy
-        @todo = Todo.find( params[:id] )
-        if @todo
-            @todo.destroy!
-        end
-
-        respond_to do |format|
-            format.html {
-                render :nothing => true
-            }
-            format.js {
-                render :nothing => true
-            }
-        end
+        Todo.delete( params[ :id ] )
+        
+        render :nothing => true
     end
 
     def new

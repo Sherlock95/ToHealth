@@ -127,10 +127,13 @@ $(document).on 'ready', ->
 
     deleteTodo = (e) ->
         $.ajax
-            method: "DELETE"
-            url: "/todos/#{todo_id}"
-            accepts: html: "text/html"
-            success: (data, status, xhr) ->
+            method: "POST"
+            url: "todos/#{todo_id}"
+            data: {
+                "_method": "delete"
+            }
+            dataType: "script"
+            success: (data) ->
                 $("#todo_#{todo_id}").remove()
                 todo_id = null
                 hideForm()
@@ -139,6 +142,7 @@ $(document).on 'ready', ->
             error: (xhr, status, error) ->
                 alert "AJAX Error: #{status} ; #{error}"
                 return
+        e.preventDefault()
         return false
 
     showRangeVal = ->

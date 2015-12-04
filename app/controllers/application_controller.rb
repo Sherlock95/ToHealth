@@ -14,16 +14,16 @@ class ApplicationController < ActionController::Base
     end
 
     def require_teacher
-        redirect_to '/todos' unless current_user.teacher?
+        redirect_to 'todos' unless current_user.teacher?
     end
 
     def require_admin
-        redirect_to '/todos' unless current_user.admin?
+        redirect_to 'todos' unless current_user.admin?
     end
 
     def redirect_on_logged_in
 	if session[:user_id_id]
-	    redirect_to '/todos'
+	    redirect_to 'todos'
 	end
     end
 

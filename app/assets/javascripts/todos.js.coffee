@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(document).on 'ready', ->
+ready = ->
     pressed = false
     todo_id = null
 
@@ -170,3 +170,6 @@ $(document).on 'ready', ->
             pressed = true
             newAjax()
             return
+    return
+$(document).on 'ready', ready
+$(document).on 'page:load', ready

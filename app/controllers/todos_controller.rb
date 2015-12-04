@@ -96,10 +96,6 @@ class TodosController < ApplicationController
         end
     end
 
-    def destroy
-
-    end
-
     def index
         @todos = Todo.all
     end

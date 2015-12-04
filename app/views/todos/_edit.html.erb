@@ -1,0 +1,63 @@
+<%= form_for( @todo ) do |f| %>
+    <ul id="editform">
+        <li>
+            <div class='lbl'>
+                <%= f.label :name, "Title:" %>
+            </div>
+            <div class='txt'>
+                <%= f.text_field :name %>
+            </div>
+        </li>
+        <li>
+            <div class='lbl'>
+                <%= f.label :course, "Class:" %>
+            </div>
+            <div class='txt'>
+                <%= f.text_field :course %>
+            </div>
+        </li>
+        <li>
+            <div class='lbl'>
+                <%= f.label :dueDate, "Due Date:" %>
+            </div>
+            <div class='txt'>
+                <%= f.text_field :dueDate %>
+            </div>
+        </li>
+        <li>
+            <div class='lbl'>
+                <%= f.label :estTime, "Extimated Completion Time:" %>
+            </div>
+            <div class='numfld'>
+                <%= f.number_field :estTime %>
+            </div>
+        </li>
+        <li>
+            <div class='lbl'>
+                <%= f.label :description, "Description:" %>
+            </div>
+            <div class='txtfld'>
+                <%= f.text_area :description %>
+            </div>
+        </li>
+        <li>
+            <div class='lbl'>
+                <%= f.label :priority, "Priority:" %>
+            </div>
+            <div class='numfld'>
+                <%= f.range_field :priority, in: 0..100 %>
+            </div>
+            <div class='numfldval'>
+                <%= f.label :priority, "50" %>
+            </div>
+        </li>
+        <li>
+            <div class='subbtn'>
+                <%= f.submit %>
+            </div>
+            <div class='delbtn'>
+                <input type="button" id="delbtn" value="Delete"/>
+            </div>
+        </li>
+    </ul>
+<% end %>

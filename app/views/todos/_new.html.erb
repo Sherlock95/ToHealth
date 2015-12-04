@@ -45,11 +45,14 @@
                 <%= f.label :priority, "Priority:" %>
             </div>
             <div class='numfld'>
-                <%= number_field_tag 'priority', in: 1...100, step: 1 %>
+                <%= f.range_field :priority, in: 0..100 %>
+            </div>
+            <div class='numfldval'>
+                <%= f.label :priority, "50" %>
             </div>
         </li>
         <li>
-            <div class='.subbtn'>
+            <div class='subbtn'>
                 <%= f.submit %>
             </div>
         </li>

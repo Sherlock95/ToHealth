@@ -1,0 +1,244 @@
+/*
+
+
+ */
+
+
+body {
+    background: rgba(138,181,229,1);
+    background: -moz-linear-gradient(left, rgba(138,181,229,1) 0%, rgba(85,158,241,1) 27%, rgba(92,158,240,1) 57%, rgba(77,148,224,1) 78%, rgba(77,148,224,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(138,181,229,1)), color-stop(27%, rgba(85,158,241,1)), color-stop(57%, rgba(92,158,240,1)), color-stop(78%, rgba(77,148,224,1)), color-stop(100%, rgba(77,148,224,1)));
+    background: -webkit-linear-gradient(left, rgba(138,181,229,1) 0%, rgba(85,158,241,1) 27%, rgba(92,158,240,1) 57%, rgba(77,148,224,1) 78%, rgba(77,148,224,1) 100%);
+    background: -o-linear-gradient(left, rgba(138,181,229,1) 0%, rgba(85,158,241,1) 27%, rgba(92,158,240,1) 57%, rgba(77,148,224,1) 78%, rgba(77,148,224,1) 100%);
+    background: -ms-linear-gradient(left, rgba(138,181,229,1) 0%, rgba(85,158,241,1) 27%, rgba(92,158,240,1) 57%, rgba(77,148,224,1) 78%, rgba(77,148,224,1) 100%);
+    background: linear-gradient(to right, rgba(138,181,229,1) 0%, rgba(85,158,241,1) 27%, rgba(92,158,240,1) 57%, rgba(77,148,224,1) 78%, rgba(77,148,224,1) 100%);
+}
+
+html {
+
+}
+/* line 5, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/sessions.css.scss */
+dy {
+  background: #fff;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  text-transform: lowercase;
+}
+
+/* line 14, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/sessions.css.scss */
+.container {
+  padding: 0;
+  width: 100%;
+}
+
+/* HEADER */
+/* line 21, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/sessions.css.scss */
+.pull-right {
+  position: inline;
+  margin: 20px 20px 0 0;
+}
+
+/* line 26, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/sessions.css.scss */
+.header {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 31, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/sessions.css.scss */
+.header li {
+  display: inline;
+  margin-left: 30px;
+}
+
+/* line 36, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/sessions.css.scss */
+.header img {
+  margin: 0 20px 0 0;
+  height: 80px;
+  width: 80px;
+}
+
+/* line 41, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/sessions.css.scss */
+.header a {
+  color: #000;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+/* line 47, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/sessions.css.scss */
+.header a:hover {
+  color: #c91717;
+  text-decoration: none;
+}
+
+/* FORM PAGES */
+/* line 54, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/sessions.css.scss */
+.form {
+  text-align: center;
+  margin: 0 auto 10px;
+  padding: 20px 0 10px 0;
+  font-size: 16px;
+  width: 300px;
+}
+
+/* line 64, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/sessions.css.scss */
+input[type=text],
+input[type=email],
+input[type=password] {
+  color: #666666;
+  width: 100%;
+  border: 1px solid #E6E6E6;
+  border-radius: 0px;
+  height: 60px;
+  margin: 6px auto;
+  text-indent: 10px;
+}
+
+/* line 74, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/sessions.css.scss */
+.btn-submit {
+  color: #FFFFFF;
+  font-size: 18px;
+  text-transform: uppercase;
+  background: #c91717;
+  padding: 10px 20px;
+  border: 0;
+  margin-top: 6px;
+}
+/* line 9, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/todos.css.scss */
+div#menu {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
+
+/* line 15, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/todos.css.scss */
+div#menu .field {
+  width: 90px;
+  height: 90px;
+  background: #EC6603;
+  color: #000;
+  cursor: pointer;
+  font-family: 'lucida sans unicode',sans-serif;
+  font-size: 18pt;
+  border: solid 1px #000000;
+  border-radius: 90px;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .3s ease-in-out;
+  text-align: center;
+  margin: auto;
+  text-indent: 0px;
+}
+
+/* line 32, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/todos.css.scss */
+div#menu .field:hover {
+  border: solid 1px #fff;
+  -moz-box-shadow: 0 0 5px #999;
+  -webkit-box-shadow: 0 0 5px #999;
+  box-shadow: 0 0 5px #999;
+  color: #fff;
+}
+
+/* line 40, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/todos.css.scss */
+div#formarea {
+  position: absolute;
+  width: 350px;
+  height: 550px;
+  top: 50%;
+  left: 50%;
+  margin-top: -325px;
+  margin-left: -175px;
+  background: #FFF;
+  border: 2px solid black;
+  border-radius: 4px;
+  display: none;
+}
+
+/* line 54, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/todos.css.scss */
+div#formarea ul {
+  list-style-type: none;
+}
+
+/* line 58, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/todos.css.scss */
+div#formarea ul li {
+  width: 80%;
+}
+
+/* line 62, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/todos.css.scss */
+div#exitNew {
+  float: right;
+  width: 74px;
+  height: 35px;
+  text-align: center;
+  bottom: 0;
+  margin: 15px 15px 0 0;
+}
+
+/* line 71, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/todos.css.scss */
+div#exitNew input[name=canceler] {
+  width: 74px;
+  height: 35px;
+  text-indent: 0px;
+  text-align: center;
+  font-family: 'lucida sans unicode',sans-serif;
+  font-size: 14pt;
+}
+
+/* line 80, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/todos.css.scss */
+ul#newForm li {
+  margin: 5px 0 5px 0;
+}
+
+/* line 84, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/todos.css.scss */
+div#numfld {
+  margin: 10px 0 0 0;
+}
+
+/* line 88, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/todos.css.scss */
+div#txtfld {
+  margin: 10px 0 0 0;
+}
+
+/* line 92, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/todos.css.scss */
+li.todo {
+  border: 2px solid black;
+  width: 300px;
+  min-width: 300px;
+  background: #fff;
+  margin: 5px 0 5px 0;
+}
+
+/* line 100, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/todos.css.scss */
+div[class^=todo] {
+  display: inline-block;
+  text-align: center !important;
+}
+
+/* line 105, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/todos.css.scss */
+div[class^=todo] span {
+  text-indent: 0px;
+  font-family: 'lucida sans unicode',sans-serif;
+  font-size: 10pt;
+  width: 100%;
+}
+
+/* line 112, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/todos.css.scss */
+div.todotitle {
+  width: 90px;
+}
+
+/* line 116, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/todos.css.scss */
+div.todocourse {
+  width: 90px;
+}
+
+/* line 120, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/todos.css.scss */
+div.tododue {
+  width: 90px;
+}
+
+/* line 124, C:/Users/Ergo/TestSpace/ToHealth/app/assets/stylesheets/todos.css.scss */
+div.todoseperator {
+  width: 7px;
+  font-weight: bold;
+}

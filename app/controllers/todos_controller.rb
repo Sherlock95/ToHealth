@@ -33,6 +33,56 @@ class TodosController < ApplicationController
         end
     end
 
+    def edit
+        @todo = Todo.find( params[:id] )
+
+        respond_to do |format|
+            format.html {
+                render :partial => "todos/edit", :locals => { :todo => @todo }, :layout => false
+            }
+            format.js {
+                render :partial => "todos/edit", :locals => { :todo => @todo }, :layout => false
+            }
+        end
+    end
+
+    def update
+        @todo = Todo.find( params[:id] )
+
+        date = nil
+        if params[ :dueDate ] != "" || params[ :dueDate ] != nil
+            date = Date.strptime( params[ :dueDate ], "%Y-%m-%d" )
+        else
+            date = nil
+        end
+
+        if @todo.update_attributes( {
+            name: params[ :name ],
+            course: params[ :course ],
+            dueDate: date,
+            estTime: params[ :estTime ],
+            description: params[ :description ],
+            priority: params[ :priority ]
+        })
+            respond_to do |format|
+                format.html {
+                    render :partial => "todos/create", :locals => { :todo => @todo }, :layout => false
+                }
+                format.js {
+                    render :partial => "todos/create", :locals => { :todo => @todo }, :layout => false
+                }
+            end
+        else
+            render :layout => false
+        end
+    end
+
+    def destroy
+        Todo.delete( params[ :id ] )
+        
+        render :nothing => true
+    end
+
     def new
         @todo = Todo.new
 
@@ -44,10 +94,6 @@ class TodosController < ApplicationController
                 render :partial => "todos/new", :locals => { :todo => @todo }, :layout => false 
             }
         end
-    end
-
-    def destroy
-
     end
 
     def index

@@ -119,6 +119,7 @@ $(document).on 'ready', ->
                         $('#formarea').html ''
                         viewTodo e
                         return
+                alert "Todo successfully updated!"
                 return
             error: (xhr, status, error) ->
                 alert "AJAX Error: #{status} ; #{error}"
